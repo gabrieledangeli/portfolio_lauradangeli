@@ -2,12 +2,19 @@
 import DecorativeSquares from '../ui/DecorativeSquares.astro';
 import { site } from '../../data/site';
 
-const { title = site.author, label = 'Portfolio' } = Astro.props;
+const {
+  title = site.author,
+  label = site.portfolioLabel,
+  selectedWorks = site.selectedWorks,
+  period = site.selectedWorksPeriod,
+} = Astro.props;
 ---
 
 <section id="hero" class="hero" aria-labelledby="hero-title">
-  <!-- TODO: Replace placeholder hero content with confirmed cover image and introductory copy. -->
+  <!-- TODO: Add approved cover image from the PDF visual direction. -->
   <DecorativeSquares />
   <p class="hero__label">{label}</p>
+  <p>{selectedWorks}</p>
+  <p>{period}</p>
   <h1 id="hero-title">{title}</h1>
 </section>

@@ -1,8 +1,30 @@
 ---
 slug: "parabole-doro"
-title: "Parabole d'oro"
-category: "todo"
+title: "PARABOLE D’ORO"
+category: "archival"
 sortOrder: 60
+country: "Italy"
+duration: "55’"
+year: "2023"
+roles:
+  - "CO-DIRECTOR"
+  - "CINEMATOGRAPHER"
+  - "CO-EDITOR"
+festivalHighlights:
+  - "TAORMINA FILM FESTIVAL"
+videoUrl: "https://vimeo.com/video/866878883"
 ---
 
-<!-- TODO: Add only confirmed synopsis, credits, festival selections, press links, images, and public screening links. -->
+## TAORMINA FILM FESTIVAL
+
+## PARABOLE D’ORO
+
+Italy, 55’, 2023
+
+CO-DIRECTOR
+CINEMATOGRAPHER
+CO-EDITOR
+
+https://vimeo.com/video/866878883
+
+<!-- TODO: Add Vimeo password only through a private workflow, not in static content. -->

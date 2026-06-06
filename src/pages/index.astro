@@ -4,23 +4,36 @@ import BioSection from '../components/sections/BioSection.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
 import FilmGrid from '../components/sections/FilmGrid.astro';
 import Hero from '../components/sections/Hero.astro';
+import { festivalSelections, pressItems } from '../data/festivalPress';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
 import { getFilmsByCategory } from '../utils/films';
 
 const shortFilms = await getFilmsByCategory('short');
 const archivalFilms = await getFilmsByCategory('archival');
+const pages = await getCollection('pages');
+const bioPage = pages.find((page) => page.id === 'bio.md' || page.id === 'bio');
+const BioContent = bioPage ? (await render(bioPage)).Content : undefined;
 ---
 
 <BaseLayout>
   <PageShell>
-    <!-- TODO: Replace placeholder sections with the approved v1 portfolio content. -->
     <Hero />
-    <BioSection />
+    <BioSection>
+      {BioContent && <BioContent />}
+    </BioSection>
     <FilmGrid id="short-films" title="Short Films" films={shortFilms} />
     <FilmGrid id="archival-films" title="Archival Films" films={archivalFilms} />
     <section id="festival-press" class="festival-press" aria-labelledby="festival-press-title">
-      <!-- TODO: Add confirmed festival selections and press links. -->
       <h2 id="festival-press-title">Festival / Press</h2>
+      <h3>Festivals</h3>
+      <ul>
+        {festivalSelections.map((item) => <li>{item}</li>)}
+      </ul>
+      <h3>Press</h3>
+      <ul>
+        {pressItems.map((item) => <li>{item}</li>)}
+      </ul>
     </section>
     <ContactSection />
   </PageShell>

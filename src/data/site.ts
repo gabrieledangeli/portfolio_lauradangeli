@@ -1,7 +1,10 @@
-// TODO: Replace placeholder metadata only after content has been approved.
 export const site = {
-  title: "Laura D'Angeli Portfolio",
-  description: "Portfolio for Laura D'Angeli.",
-  author: "Laura D'Angeli",
+  title: "Laura D’Angeli Portfolio",
+  description: "Selected works by Laura D’Angeli, 2020 - 2026.",
+  author: "Laura D’Angeli",
+  role: 'filmmaker',
+  portfolioLabel: 'PORTFOLIO',
+  selectedWorks: 'Selected works',
+  selectedWorksPeriod: '2020 - 2026',
   lang: 'en',
 } as const;

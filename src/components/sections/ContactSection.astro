@@ -1,8 +1,12 @@
 ---
+import { site } from '../../data/site';
+
 const { title = 'Contact' } = Astro.props;
 ---
 
 <section id="contact" class="contact-section" aria-labelledby="contact-title">
   <!-- TODO: Add only approved public contact channels; do not add private phone numbers, emails, or passwords. -->
   <h2 id="contact-title">{title}</h2>
+  <p>{site.author}</p>
+  <p>{site.role}</p>
 </section>

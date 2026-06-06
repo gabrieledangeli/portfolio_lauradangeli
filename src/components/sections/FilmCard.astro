@@ -2,11 +2,27 @@
 const { film } = Astro.props;
 const title = film?.data?.title ?? 'Untitled film';
 const slug = film?.data?.slug;
+const metadata = [film?.data?.country, film?.data?.duration, film?.data?.year].filter(Boolean).join(', ');
+const festivalHighlights = film?.data?.festivalHighlights ?? [];
+const roles = film?.data?.roles ?? [];
 ---
 
 <article class="film-card">
-  <!-- TODO: Add confirmed still image, metadata, and short synopsis. -->
   <a href={slug ? `/films/${slug}/` : '#'} class="film-card__link">
     <h3>{title}</h3>
+    {film?.data?.subtitle && <p>{film.data.subtitle}</p>}
   </a>
+  {festivalHighlights.length > 0 && (
+    <ul class="film-card__highlights">
+      {festivalHighlights.map((item) => <li>{item}</li>)}
+    </ul>
+  )}
+  {metadata && <p>{metadata}</p>}
+  {film?.data?.archive && <p>{film.data.archive}</p>}
+  {roles.length > 0 && (
+    <ul class="film-card__roles">
+      {roles.map((role) => <li>{role}</li>)}
+    </ul>
+  )}
+  {film?.data?.summary && <p>{film.data.summary}</p>}
 </article>
