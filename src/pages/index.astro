@@ -1,17 +1,27 @@
 ---
+import PageShell from '../components/layout/PageShell.astro';
+import BioSection from '../components/sections/BioSection.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+import FilmGrid from '../components/sections/FilmGrid.astro';
+import Hero from '../components/sections/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFilmsByCategory } from '../utils/films';
 
+const shortFilms = await getFilmsByCategory('short');
+const archivalFilms = await getFilmsByCategory('archival');
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <PageShell>
+    <!-- TODO: Replace placeholder sections with the approved v1 portfolio content. -->
+    <Hero />
+    <BioSection />
+    <FilmGrid id="short-films" title="Short Films" films={shortFilms} />
+    <FilmGrid id="archival-films" title="Archival Films" films={archivalFilms} />
+    <section id="festival-press" class="festival-press" aria-labelledby="festival-press-title">
+      <!-- TODO: Add confirmed festival selections and press links. -->
+      <h2 id="festival-press-title">Festival / Press</h2>
+    </section>
+    <ContactSection />
+  </PageShell>
+</BaseLayout>

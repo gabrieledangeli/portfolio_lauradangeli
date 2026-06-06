@@ -1,0 +1,8 @@
+---
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`page-shell ${className}`}>
+  <!-- TODO: Refine page shell spacing after the visual direction is confirmed. -->
+  <slot />
+</div>

@@ -1,0 +1,9 @@
+---
+const { title = 'Bio' } = Astro.props;
+---
+
+<section id="bio" class="bio-section" aria-labelledby="bio-title">
+  <!-- TODO: Add confirmed biography text from the approved source. -->
+  <h2 id="bio-title">{title}</h2>
+  <slot />
+</section>

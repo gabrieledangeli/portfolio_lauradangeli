@@ -1,0 +1,18 @@
+---
+import { navigationItems } from '../../data/navigation';
+import { site } from '../../data/site';
+---
+
+<header class="site-header">
+  <!-- TODO: Replace placeholder header structure with the approved navigation treatment. -->
+  <nav aria-label="Primary navigation" class="site-header__nav">
+    <a href="/" class="site-header__brand">{site.author}</a>
+    <ul class="site-header__links">
+      {navigationItems.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,10 @@
+/* TODO: Replace placeholder tokens with the approved art direction. */
+:root {
+  --color-background: #f7f7f4;
+  --color-surface: #ffffff;
+  --color-text: #161616;
+  --color-muted: #666666;
+  --color-accent: #8b1e2d;
+  --space-page: clamp(1rem, 4vw, 3rem);
+  --measure-content: 68rem;
+}

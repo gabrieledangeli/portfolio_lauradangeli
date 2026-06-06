@@ -1,0 +1,27 @@
+---
+import FilmLayout from '../../layouts/FilmLayout.astro';
+import { render } from 'astro:content';
+import { getAllFilms } from '../../utils/films';
+
+export async function getStaticPaths() {
+  const films = await getAllFilms();
+
+  return films.map((film) => ({
+    params: { slug: film.data.slug },
+    props: { film },
+  }));
+}
+
+const { film } = Astro.props;
+const { Content } = await render(film);
+---
+
+<FilmLayout film={film}>
+  <header class="film-detail__header">
+    <!-- TODO: Add confirmed film hero image, year, role, and format. -->
+    <h1>{film.data.title}</h1>
+  </header>
+  <div class="film-detail__body">
+    <Content />
+  </div>
+</FilmLayout>

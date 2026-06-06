@@ -1,0 +1,14 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { site } from '../data/site';
+
+const { film } = Astro.props;
+const title = film?.data?.title ? `${film.data.title} | ${site.author}` : site.title;
+---
+
+<BaseLayout title={title}>
+  <article class="film-layout">
+    <!-- TODO: Add confirmed film detail structure, credits, media, festivals, and press links. -->
+    <slot />
+  </article>
+</BaseLayout>

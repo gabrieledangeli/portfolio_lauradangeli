@@ -1,0 +1,27 @@
+---
+type Props = {
+  src?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+};
+
+const {
+  src,
+  alt = '',
+  width,
+  height,
+  loading = 'lazy',
+} = Astro.props;
+---
+
+{
+  src ? (
+    <img src={src} alt={alt} width={width} height={height} loading={loading} />
+  ) : (
+    <div class="responsive-image responsive-image--placeholder" aria-hidden="true">
+      <!-- TODO: Replace placeholder with approved responsive image source. -->
+    </div>
+  )
+}

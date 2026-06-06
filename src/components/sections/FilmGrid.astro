@@ -1,0 +1,19 @@
+---
+import FilmCard from './FilmCard.astro';
+
+const { id, title, films = [] } = Astro.props;
+---
+
+<section id={id} class="film-grid" aria-labelledby={`${id}-title`}>
+  <!-- TODO: Populate this section after each film category is confirmed. -->
+  <h2 id={`${id}-title`}>{title}</h2>
+  {films.length > 0 && (
+    <ul class="film-grid__list">
+      {films.map((film) => (
+        <li>
+          <FilmCard film={film} />
+        </li>
+      ))}
+    </ul>
+  )}
+</section>

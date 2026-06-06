@@ -1,0 +1,52 @@
+@import './tokens.css';
+
+/* TODO: Keep these base styles minimal until the full visual design is implemented. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+main,
+.site-header__nav,
+.site-footer,
+.page-shell {
+  width: min(100%, var(--measure-content));
+  margin-inline: auto;
+  padding-inline: var(--space-page);
+}
+
+.site-header__nav,
+.site-header__links,
+.film-grid__list {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-header__nav {
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.site-header__links,
+.film-grid__list {
+  padding: 0;
+  list-style: none;
+}
+
+section {
+  padding-block: 3rem;
+}
